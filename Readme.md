@@ -73,6 +73,7 @@ _ModuleC/Config/routing.xml_
 Now, in any controller, if you call `$this->container->get('my.super.service')`, you always get the **most** overridden module service (by greatest module position) **BUT**, in your browser/RESTClient, if you call `/my/super/route`, you always match the **less** (first matching) overridden module route.
 
 A small table can be clearer :
+
 | Module position | Service from module | Called controller (from route configuration) |
 |:---:|:---:|:---:|
 | `A > B > C` | `C` | `ModuleA:Main:index` |
@@ -84,6 +85,7 @@ A small table can be clearer :
 A way to prevent this behaviour is to define your own router ([Thelia doc](http://doc.thelia.net/en/documentation/modules/routing.html#custom-routing)) but it can be boring or just a third module on which you do not have the hand.
 
 So this module reverse the way that routes match for modules without defined router, and this is where the magic happens, previous table become :
+
 | Module position | Service from module | Called controller (from route configuration) |
 |:---:|:---:|:---:|
 | `A > B > C` | `C` | `ModuleC:Main:index` |
