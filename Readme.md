@@ -76,11 +76,11 @@ A small table can be clearer :
 
 | Module position | Service from module | Called controller (from route configuration) |
 |:---:|:---:|:---:|
-| `A > B > C` | `C` | `ModuleA:Main:index` |
-| `A > C > B` | `B` | `ModuleA:Main:index` |
-| `B > C > A` | `A` | `ModuleB:Main:index` |
-| `C > B > A` | `A` | `ModuleC:Main:index` |
-| `C > A > B` | `B` | `ModuleC:Main:index` |
+| `A < B < C` | `C` | `ModuleA:Main:index` |
+| `A < C < B` | `B` | `ModuleA:Main:index` |
+| `B < C < A` | `A` | `ModuleB:Main:index` |
+| `C < B < A` | `A` | `ModuleC:Main:index` |
+| `C < A < B` | `B` | `ModuleC:Main:index` |
 
 A way to prevent this behaviour is to define your own router ([Thelia doc](http://doc.thelia.net/en/documentation/modules/routing.html#custom-routing)) but it can be boring or just a third module on which you do not have the hand.
 
@@ -88,8 +88,8 @@ So this module reverse the way that routes match for modules without defined rou
 
 | Module position | Service from module | Called controller (from route configuration) |
 |:---:|:---:|:---:|
-| `A > B > C` | `C` | `ModuleC:Main:index` |
-| `A > C > B` | `B` | `ModuleB:Main:index` |
-| `B > C > A` | `A` | `ModuleA:Main:index` |
-| `C > B > A` | `A` | `ModuleA:Main:index` |
-| `C > A > B` | `B` | `ModuleB:Main:index` |
+| `A < B < C` | `C` | `ModuleC:Main:index` |
+| `A < C < B` | `B` | `ModuleB:Main:index` |
+| `B < C < A` | `A` | `ModuleA:Main:index` |
+| `C < B < A` | `A` | `ModuleA:Main:index` |
+| `C < A < B` | `B` | `ModuleB:Main:index` |
