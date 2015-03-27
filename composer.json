@@ -1,11 +1,19 @@
 {
-  "name": "bilhackmac/routes-match-inverter-module",
-  "license": "GPL-3.0+",
-  "type": "thelia-module",
-  "require": {
-    "thelia/installer": "~1.1"
-  },
-  "extra": {
-    "installer-name": "RoutesMatchInverter"
-  }
+    "name": "bilhackmac/routes-match-inverter-module",
+    "type": "thelia-module",
+    "license": "GPL-3.0+",
+    "description": "Allows to match the routes in reverse modules order",
+    "authors": [
+        {
+            "name": "Jérôme Billiras",
+            "email": "jerome.billiras+github@gmail.com",
+            "homepage": "https://github.com/bilhackmac"
+        }
+    ],
+    "require": {
+        "thelia/installer": "~1.1"
+    },
+    "extra": {
+        "installer-name": "RoutesMatchInverter"
+    }
 }
